@@ -5,7 +5,8 @@ class DBSettings {
     /**
      * @return array
      */
-    static function getSettings() {
+    static function getSettings(): array
+    {
         $settings['host'] = "127.0.0.1";
         $settings['userName'] = "root";
         $settings['password'] = "";
@@ -17,8 +18,7 @@ class DBSettings {
 
 class DataBase extends DBSettings
 {
-    private  $link;
-
+    private mysqli $link;
 
     /**
      *  конструктор, сначала получаем настройки базы данных, потом создаем подключение по этим настройкам
@@ -43,18 +43,20 @@ class DataBase extends DBSettings
      * @param $tableName
      * @return array | null
      */
-    function fetchAll($tableName) {
+    function fetchAll($tableName): ?array
+    {
         return $this->link->query("SELECT * FROM $tableName")->fetch_all();
     }
 
-    function fetchAllWithConditions(string $tableName, $conditions) {
+    function fetchAllWithConditions(string $tableName, $conditions): array
+    {
         return $this->link->query("SELECT * FROM $tableName WHERE " .implode(' AND ', $conditions))->fetch_all();
     }
 
     /**
      * @param $tableName
      * @param $condition
-     * @return array|null
+     * @return array
      */
     function fetchOneWithCondition($tableName, $condition) :array {
         return $this->link->query("SELECT * FROM $tableName WHERE $condition")->fetch_assoc();
@@ -67,8 +69,9 @@ $allPosts = $db->fetchAll("posts");
 $condPosts = $db->fetchAllWithConditions("posts", ["posterName = 'Sanya'"]);
 $condPost = $db->fetchOneWithCondition("posts", "posterName = 'Sanya'");
 
-//var_dump($condPost);
-//var_dump($db->fetchAll("posts"));
+var_dump($allPosts);
+var_dump($condPosts);
+var_dump($condPost);
 ?>
 
 <!doctype html>
@@ -83,8 +86,6 @@ $condPost = $db->fetchOneWithCondition("posts", "posterName = 'Sanya'");
 </head>
 <body>
     <div class="posts">
-
-        <!-- COMMENT/UNCOMMENT TO SEE DIFF-->
         <?php foreach ($allPosts as $post) {?>
             <div class="post">
                 <p class="poster-name"><?= $post[1]?></p>
@@ -92,20 +93,6 @@ $condPost = $db->fetchOneWithCondition("posts", "posterName = 'Sanya'");
                 <p class="post-data"><?= $post[3]?></p>
             </div>
         <?php }?>
-
-<!--        --><?php //foreach ($condPosts as $post) {?>
-<!--            <div class="post">-->
-<!--                <p class="poster-name">--><?//= $post[1]?><!--</p>-->
-<!--                <p class="post-text">--><?//= $post[2]?><!--</p>-->
-<!--                <p class="post-data">--><?//= $post[3]?><!--</p>-->
-<!--            </div>-->
-<!--        --><?php //}?>
-<!---->
-<!--        <div class="post">-->
-<!--            <p class="poster-name">--><?//= $condPost['posterName']?><!--</p>-->
-<!--            <p class="post-text">--><?//= $condPost['postText']?><!--</p>-->
-<!--            <p class="post-data">--><?//= $condPost['postDate']?><!--</p>-->
-<!--        </div>-->
     </div>
 </body>
 </html>
