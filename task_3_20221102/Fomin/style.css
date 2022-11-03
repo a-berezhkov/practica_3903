@@ -153,8 +153,13 @@ form {
     margin-top: 50px;
 }
 
+.login-form input {
+    width: 268px;
+    height: 45px;
+}
+
 label {
-    width: 80px;
+    width: 268px;
     margin-bottom: 25px;
 
     display: block;
@@ -215,3 +220,20 @@ button[type=submit] {
     align-self: center;
 }
 
+/*
+--------------registration
+ */
+
+.registration-form {
+    width: 600px;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.surename-box, .forename-box {
+    margin-top: 40px;
+}
