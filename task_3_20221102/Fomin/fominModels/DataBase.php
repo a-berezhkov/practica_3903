@@ -57,13 +57,21 @@ class DataBase extends DatabaseSettings
         return $this->link->query("SELECT * FROM $tableName WHERE " .implode(' AND ', $conditions))->fetch_all();
     }
 
+
     /**
      * @param $tableName
      * @param $condition
      * @return array
      */
-    function fetchOneWithCondition($tableName, $condition) :array {
+    function fetchOneWithCondition($tableName, $condition) :?array {
         return $this->link->query("SELECT * FROM $tableName WHERE $condition")->fetch_assoc();
+    }
+
+    function fetchUser(string $tableName, $conditions): ?array
+    {
+        $findUserQuery = "SELECT * FROM $tableName WHERE " .implode(' AND ', $conditions);
+
+        return $this->link->query($findUserQuery)->fetch_assoc();
     }
 
     function addUser($query) {

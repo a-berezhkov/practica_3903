@@ -16,14 +16,14 @@
         <h1 class="login-heading">
             Log In
         </h1>
-        <form class="login-form" action="">
+        <form class="login-form" action="auth.php" method="post">
             <label for="loginBar">
                 Username
-                <input class="usernameBox" type="text" name="login" id="usernameBox" placeholder="Type your username...">
+                <input class="usernameBox" type="text" name="username" id="usernameBox" placeholder="Type your username...">
             </label>
             <label for="passwordBox">
                 Password
-                <input class="password-box" type="password" name="pass" id="passwordBox" placeholder="Type your password...">
+                <input class="password-box" type="password" name="password" id="passwordBox" placeholder="Type your password...">
             </label>
             <button class="styled-btn login" type="submit">
                 Log In

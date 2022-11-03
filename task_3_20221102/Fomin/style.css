@@ -134,6 +134,19 @@ h1 {
     align-items: end;
 }
 
+.add-post-form {
+    opacity: 0;
+    position: absolute;
+    margin-top: 25px;
+    width: 350px;
+    transition: .3s;
+    box-sizing: border-box;
+}
+
+.add-post-btn {
+    width: 60px;
+}
+
 /*
 --------------login
  */
@@ -236,4 +249,28 @@ button[type=submit] {
 
 .surename-box, .forename-box {
     margin-top: 40px;
+}
+
+/*
+--------------animations
+ */
+
+.show {
+    position: absolute;
+    z-index: 1000;
+    padding: 25px 40px 55px 40px;
+
+    font-weight: 700;
+
+    opacity: 1 !important;
+    background: white;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+}
+
+.active-background {
+    background: rgba(5, 196, 107, 0.47) !important;
+
+    border-radius: 12px;
 }

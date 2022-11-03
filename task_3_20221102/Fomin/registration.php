@@ -21,7 +21,8 @@ if ($_POST) {
     $user = new User($_POST['username'], $_POST['password'], $_POST['email'], $_POST['forename'], $_POST['surename']);
 
     if (!empty($id = $user->saveToDataBase($db))){
-        $_SESSION['user_id'] = $id;
+        $_SESSION['user_id'] = $id["id"];
+        $_SESSION['user_name'] = $id["userForename"] . " " .$id["userSurename"];
         // перенаправляем на страницу index.php
         header('Location: index.php');
     } else{

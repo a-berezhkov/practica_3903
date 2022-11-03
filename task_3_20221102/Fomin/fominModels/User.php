@@ -41,7 +41,7 @@ class User
 
         $db->addUser($quer);
 
-        $id = $db->fetchOneWithCondition("users", "userName = '$this->username'");
-        return $id["id"];
+        return $db->fetchOneWithCondition("users", "userName = '$this->username'");
+
     }
 }
