@@ -1,12 +1,11 @@
 <?php
 
-namespace GenresByContent;
+namespace GenreByContent;
 
 class Detective extends GenreByContent
 {
-
     public function __construct()
     {
-        $this->genreTitle = "Detective";
+        $this->genreTitle="Detective";
     }
 }
