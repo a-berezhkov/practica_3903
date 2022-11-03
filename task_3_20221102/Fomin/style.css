@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-html, button, input {
+html, button, input, textarea {
     font-family: Quicksand;
 }
 
@@ -10,6 +10,9 @@ button {
 
 body {
     width: 1040px;
+
+    display: flex;
+    flex-direction: column;
 
     margin: 0 auto;
 }
@@ -28,6 +31,10 @@ h1 {
     font-size:38px;
 }
 
+textarea {
+    height: 100px !important;
+}
+
 /*
 --------------index
  */
@@ -37,6 +44,14 @@ h1 {
 
     font-size: 32px;
     font-weight: bold;
+}
+
+.header-btns {
+    width: 250px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .styled-btn {
@@ -56,6 +71,10 @@ h1 {
     font-size: 18px;
 
     transition: .3s;
+}
+
+.logout {
+    width: 55px;
 }
 
 .add-post {
@@ -147,6 +166,11 @@ h1 {
     width: 60px;
 }
 
+.edit-profile-form {
+    margin-top: 100px;
+    align-self: end;
+}
+
 /*
 --------------login
  */
@@ -183,7 +207,7 @@ label {
     color: #444444;
 }
 
-input {
+input, textarea {
     width: 250px;
     height: 25px;
 
@@ -202,7 +226,7 @@ input {
     transition: .3s;
 }
 
-input:focus {
+input:focus, textarea:focus {
     background: #e3e3e3;
 
     border-radius: 16px;
@@ -213,15 +237,9 @@ button[type=submit] {
 }
 
 .login-heading {
-    display: flex;
-    align-items: center;
-
     margin-top: 50px;
 }
 
-.login-heading svg {
-    margin-right: 15px;
-}
 
 .login {
     width: 200px;
@@ -257,7 +275,6 @@ button[type=submit] {
 
 .show {
     position: absolute;
-    z-index: 1000;
     padding: 25px 40px 55px 40px;
 
     font-weight: 700;

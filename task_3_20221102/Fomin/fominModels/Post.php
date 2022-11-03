@@ -23,8 +23,11 @@ class Post
         $this->postCreator = $postCreator;
     }
 
-    public function addPost() {
-        ///
+    public function addPost(DataBase $db) {
+        $quer = "INSERT INTO `posts` (`id`, `postTitle`, `postText`, `postDate`, `postCreator`) 
+        VALUES (NULL, '$this->postTitle', '$this->postText', '$this->postDate', '$this->postCreator')";
+
+        $db->addRow($quer);
     }
 
 }

@@ -13,7 +13,7 @@ spl_autoload_register(/**
 $db = new DataBase();
 
 if ($_POST) {
-    $user = $db->fetchUser("`users`", ["username = '" .$_POST['username'] ."'", "userPassword = '" .$_POST['password'] ."'"]);
+    $user = $db->fetchUser("`users`", ["username = '" .$_POST['username'] ."'", "userPassword = '" .md5($_POST['password']) ."'"]);
 
     if (!empty($user)) {
         $_SESSION['user_id'] = $user["id"];

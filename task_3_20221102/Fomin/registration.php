@@ -18,7 +18,9 @@ session_start();
 if ($_POST) {
     $password = md5($_POST['password']);
 
-    $user = new User($_POST['username'], $_POST['password'], $_POST['email'], $_POST['forename'], $_POST['surename']);
+    var_dump($password);
+
+    $user = new User($_POST['username'], $password, $_POST['email'], $_POST['forename'], $_POST['surename']);
 
     if (!empty($id = $user->saveToDataBase($db))){
         $_SESSION['user_id'] = $id["id"];

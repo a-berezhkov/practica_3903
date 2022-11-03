@@ -11,9 +11,9 @@ class DatabaseSettings {
      */
     static function getSettings(): array
     {
-        $settings['host'] = "127.0.0.1";
+        $settings['host'] = "localhost";
         $settings['userName'] = "root";
-        $settings['password'] = "";
+        $settings['password'] = "qwerty";
         $settings['dbName'] = "blog";
 
         return $settings;
@@ -74,7 +74,7 @@ class DataBase extends DatabaseSettings
         return $this->link->query($findUserQuery)->fetch_assoc();
     }
 
-    function addUser($query) {
-        $this->link->query($query, MYSQLI_STORE_RESULT);
+    function addRow($query) {
+        $this->link->query($query);
     }
 }
