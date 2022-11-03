@@ -3,6 +3,9 @@ namespace PHPClasses;
 
 class Book
 {
+    public $genre;
+    public $genreList = [];
+
     private $bookTitle;
 
     /**
@@ -12,7 +15,6 @@ class Book
     {
         return $this->bookTitle;
     }
-
     /**
      * @param mixed $bookTitle
      */
@@ -20,9 +22,6 @@ class Book
     {
         $this->bookTitle = $bookTitle;
     }
-    public $genre;
-
-    public $genreList = [];
 
     public function AddGenre($genre) {
         array_push($this->genreList, $genre);
