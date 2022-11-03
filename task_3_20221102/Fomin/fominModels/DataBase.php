@@ -52,12 +52,6 @@ class DataBase extends DatabaseSettings
         return $this->link->query("SELECT * FROM $tableName")->fetch_all();
     }
 
-    function fetchAllWithConditions(string $tableName, $conditions): array
-    {
-        return $this->link->query("SELECT * FROM $tableName WHERE " .implode(' AND ', $conditions))->fetch_all();
-    }
-
-
     /**
      * @param $tableName
      * @param $condition
@@ -67,6 +61,13 @@ class DataBase extends DatabaseSettings
         return $this->link->query("SELECT * FROM $tableName WHERE $condition")->fetch_assoc();
     }
 
+    /**
+     * @param string $tableName
+     * @param $conditions - условия отбора юзера: логин и пароль
+     * @return array|null
+     *
+     * формируется запрос и отправляется в базу, возвращается найденый юзер
+     */
     function fetchUser(string $tableName, $conditions): ?array
     {
         $findUserQuery = "SELECT * FROM $tableName WHERE " .implode(' AND ', $conditions);
@@ -75,6 +76,10 @@ class DataBase extends DatabaseSettings
     }
 
     function addRow($query) {
+        $this->link->query($query);
+    }
+
+    function updateRow($query) {
         $this->link->query($query);
     }
 }

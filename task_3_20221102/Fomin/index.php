@@ -20,8 +20,6 @@ $db = new DataBase();
 
 $posts = $db->fetchAll("posts");
 
-
-
 ?>
 
 <!doctype html>
@@ -51,18 +49,18 @@ $posts = $db->fetchAll("posts");
             </button>
         </div>
     </header>
-    <form class="add-post-form edit-profile-form" id="editProfileForm" action="" method="post">
+    <form class="add-post-form edit-profile-form" id="editProfileForm" action="updateUser.php" method="post">
         <label for="postTitle">
             New forename
-            <input class="post-title-box" type="text" name="postTitle" id="postTitle" placeholder="Type new forename...">
+            <input class="post-title-box" type="text" name="newForename" id="newForename" placeholder="Type new forename...">
         </label>
         <label for="postText">
             New surename
-            <input class="post-text-box" name="postText" id="postText" placeholder="Type new surename...">
+            <input class="post-text-box" type="text" name="newSurename" id="newSurename" placeholder="Type new surename...">
         </label>
         <label for="postText">
             New E-Mail
-            <input class="post-text-box" name="postText" id="postText" placeholder="Type new e-mail...">
+            <input class="post-text-box" type="text" name="newEmail" id="newEmail" placeholder="Type new e-mail...">
         </label>
         <button class="styled-btn add-post-btn add-post" type="submit">
             <svg width="46" height="46" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

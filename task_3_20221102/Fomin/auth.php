@@ -10,14 +10,21 @@ spl_autoload_register(/**
     include $class_name . '.php';
 });
 
+session_start();
 $db = new DataBase();
 
 if ($_POST) {
     $user = $db->fetchUser("`users`", ["username = '" .$_POST['username'] ."'", "userPassword = '" .md5($_POST['password']) ."'"]);
+    var_dump($user);
 
+    /**
+     * если fetchUser отработал и нашелся пользователь,
+     * его данные записываются в глобальную пременную и производится редирект на главную
+     */
     if (!empty($user)) {
         $_SESSION['user_id'] = $user["id"];
         $_SESSION['user_name'] = $user["userForename"] . " " .$user["userSurename"];
+
         // перенаправляем на страницу index.php
         header('Location: index.php');
     }

@@ -37,11 +37,10 @@ class User
     }
 
     public function saveToDataBase(DataBase $db) {
-        $quer = "INSERT INTO `users` (`id`, `username`, `userPassword`, `userForename`, `userSurename`, `userMail`) VALUES (NULL, '$this->username', '$this->userPassword', '$this->userForename', '$this->userSurname', '$this->userMail')";
+        $insertQuery = "INSERT INTO `users` (`id`, `username`, `userPassword`, `userForename`, `userSurename`, `userMail`) VALUES (NULL, '$this->username', '$this->userPassword', '$this->userForename', '$this->userSurname', '$this->userMail')";
 
-        $db->addRow($quer);
+        $db->addRow($insertQuery);
 
         return $db->fetchOneWithCondition("users", "username = '$this->username'");
-
     }
 }

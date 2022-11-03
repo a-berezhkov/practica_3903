@@ -18,10 +18,13 @@ session_start();
 if ($_POST) {
     $password = md5($_POST['password']);
 
-    var_dump($password);
-
+    //формируем юзера
     $user = new User($_POST['username'], $password, $_POST['email'], $_POST['forename'], $_POST['surename']);
 
+    /**
+     * если юзер добавился в базу,
+     * его данные записываются в глобальную пременную и производится редирект на главную
+     */
     if (!empty($id = $user->saveToDataBase($db))){
         $_SESSION['user_id'] = $id["id"];
         $_SESSION['user_name'] = $id["userForename"] . " " .$id["userSurename"];

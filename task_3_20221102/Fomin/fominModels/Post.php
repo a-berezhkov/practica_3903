@@ -23,6 +23,12 @@ class Post
         $this->postCreator = $postCreator;
     }
 
+    /**
+     * @param DataBase $db
+     * @return void
+     *
+     * формируем запрос и передаем его в базу
+     */
     public function addPost(DataBase $db) {
         $quer = "INSERT INTO `posts` (`id`, `postTitle`, `postText`, `postDate`, `postCreator`) 
         VALUES (NULL, '$this->postTitle', '$this->postText', '$this->postDate', '$this->postCreator')";
