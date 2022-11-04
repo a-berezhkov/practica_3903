@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+button {
+    cursor: pointer;
+}
+
+body {
+    width: 1040px;
+
+    margin: 0 auto;
+}
+
+body, button, input, textarea {
+    font-family: Nunito;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    margin-top: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size:38px;
+}
+.header-heading {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+.styled-btn-post{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ef9b1e;
+
+}
+
+.styled-btn-profile {
+    width: 100px;
+    height: 40px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ef9b1e;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+.add-post {
+    width: 150px;
+    height: 45px;
+
+    margin-top: 15px;
+
+    color: white;
+    background: #05c46b;
+}
+
+.add-post:hover {
+    background: rgba(5, 196, 107, 0.87) !important;
+}
+
+.styled-btn-profile:hover {
+    background: rgba(138, 34, 6, 0.87);
+    border-radius: 20px;
+}
+.styled-btn-post:hover {
+    background: rgba(138, 34, 6, 0.87);
+    border-radius: 20px;
+}
+.styled-btn{
+    width: 110px;
+    height: 35px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ef9b1e;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.styled-btn:hover{
+    background: rgb(128, 42, 11);
+    border-radius: 20px;
+}
+.styled-btn-reg{
+    width: 90px;
+    height: 35px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ef9b1e;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+
+
+/*
+-login
+ */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 268px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+}
+
+label {
+    width: 80px;
+    margin-bottom: 25px;
+
+    display: block;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    color: #444444;
+}
+.login-head {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.login-heading svg {
+    margin-right: 15px;
+}
+
+.login {
+    width: 200px;
+
+    margin-top: 60px;
+
+    font-size: 22px;
+
+    align-self: center;
+}
+
+
+/*
+--registr
+ */
+.styled-form-reg {
+    width: 268px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 0 auto;
+}
+
+
+
+.login-heading {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+}
+
