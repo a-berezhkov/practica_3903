@@ -11,10 +11,10 @@ class DatabaseSettings {
      */
     static function getSettings(): array
     {
-        $settings['host'] = "localhost";
+        $settings['host'] = "127.0.0.1";
         $settings['userName'] = "root";
-        $settings['password'] = "qwerty";
-        $settings['dbName'] = "blog";
+        $settings['password'] = "";
+        $settings['dbName'] = "php_blog";
 
         return $settings;
     }
@@ -22,7 +22,7 @@ class DatabaseSettings {
 
 class DataBase extends DatabaseSettings
 {
-    private mysqli $link;
+    private $link;
 
     /**
      *  конструктор, сначала получаем настройки базы данных, потом создаем подключение по этим настройкам

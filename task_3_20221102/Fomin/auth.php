@@ -15,7 +15,6 @@ $db = new DataBase();
 
 if ($_POST) {
     $user = $db->fetchUser("`users`", ["username = '" .$_POST['username'] ."'", "userPassword = '" .md5($_POST['password']) ."'"]);
-    var_dump($user);
 
     /**
      * если fetchUser отработал и нашелся пользователь,
