@@ -15,7 +15,6 @@ session_start();
 $db = new BlogDB();
 
 if ($_POST) {
-    var_dump($_POST);
     $updateQuery = "UPDATE `users` SET `firstName` = '" .$_POST['newFirstName'] ."', `secondName` = '" .$_POST['newSecondName'] ."', `mail` = '" .$_POST['newMail'] ."' WHERE `id` = " .$_SESSION['user_id'];
 
     $db->updateRow($updateQuery);

@@ -1,4 +1,5 @@
 <?php
+//добавить проверку на сессию и выкидывать на главную если сессия есть
 ?>
 
 <!doctype html>
@@ -28,6 +29,9 @@
         <button class="styled-btn-login" type="submit">
             Log In
         </button>
+        <?php
+        echo '<a href="./registPage.php" class="button beer-button-blue">Wanna beer?</a>';
+        ?>
     </form>
 </div>
 </body>

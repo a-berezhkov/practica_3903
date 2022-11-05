@@ -9,6 +9,8 @@ spl_autoload_register(/**
     include $class_name . '.php';
 });
 
+
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -33,12 +35,16 @@ $posts = $db->fetchAll("posts");
 <body>
 
 <header>
-    <p class="header-heading"><?=$_SESSION['user_name']?></p>
-    <div class="header-btn">
-        <button class="styled-btn-profile" id="showEditProfileBtn">
-            Edit Profile
+    <div class="header">
+        <p class="header-heading">
+            <?=$_SESSION['user_name']?>
+
+        </p>
+        <?php
+        echo '<a href="./LoginPage.php" class="exit-btn">Wanna beer?</a>';
+        ?>
     </div>
-    <form class="add-post-form edit-profile-form" id="editProfileForm" action="editUser.php" method="post">
+    <form class="add-post-form edit-profile-form main-form" id="editProfileForm" action="editUser.php" method="post">
         <label for="postTitle">
             New forename
             <input class="post-title-box" type="text" name="newFirstName" id="newFirstName" placeholder="Type new forename...">
@@ -56,7 +62,7 @@ $posts = $db->fetchAll("posts");
         </button>
     </form>
 </header>
-<form class="add-post-form" id="addPostForm" action="shitpost.php" method="post">
+<form class="add-post-form main-form" id="addPostForm" action="shitpost.php" method="post">
     <label for="Title">
         Title
         <input class="post-title-box" type="text" name="Title" id="Title" placeholder="Type title...">
@@ -80,18 +86,19 @@ $posts = $db->fetchAll("posts");
     <button class="styled-btn-post">
         Add New
     </button>
-    <div class="posts-container-fomin">
+    <div class="posts-container-chagai">
         <?php
         foreach ($posts as $post){?>
-        <div class="post-chagai>
-        <p class="post-title-chagai"><?=$post[1]?></p>
-        <p class="post-text-chagai"><?=$post[2]?></p>
-        <div class="post-author-container">
-            <p class="post-author"><?=$post[4]?></p>
-            <p class="post-date-chagai"><?=$post[3]?></p>
-        </div>
-    </div>
+            <div class="post-chagai">
+                <p class="post-title-chagai"><?=$post[1]?></p>
+                <p class="post-text-chagai"><?=$post[2]?></p>
+                <div class="post-author-container">
+                    <p class="post-author"><?=$post[4]?></p>
+                    <p class="post-date-chagai"><?=$post[3]?></p>
+                </div>
+            </div>
     <?php }?>
+    </div>
 </section>
 
 

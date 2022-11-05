@@ -11,9 +11,9 @@ class DatabaseSettings {
      */
     static function getSettings(): array
     {
-        $settings['host'] = "localhost";
+        $settings['host'] = "127.0.0.1";
         $settings['userName'] = "root";
-        $settings['password'] = "root";
+        $settings['password'] = "";
         $settings['dbName'] = "blog";
 
         return $settings;
@@ -22,7 +22,7 @@ class DatabaseSettings {
 
 class BlogDB extends DatabaseSettings
 {
-    private mysqli $link;
+    private $link;
 
     function __construct() {
         $settings = DatabaseSettings::getSettings();

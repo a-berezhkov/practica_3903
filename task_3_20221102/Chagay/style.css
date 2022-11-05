@@ -30,6 +30,27 @@ h1 {
     font-weight: bold;
     font-size:38px;
 }
+
+.header{
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.exit-btn{
+    text-decoration: none;
+    color: black;
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background: #ef9b1e;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+
+}
 .header-heading {
     margin: 0;
 
@@ -54,7 +75,6 @@ h1 {
 .styled-btn-profile {
     width: 100px;
     height: 40px;
-    padding: 12px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,6 +141,14 @@ h1 {
     transition: .3s;
 }
 
+/*
+-----button beer
+ */
+
+.beer-button-blue{
+    text-decoration: none;
+}
+
 
 
 /*
@@ -139,6 +167,15 @@ form {
     flex-direction: column;
 
     margin-top: 50px;
+}
+
+.main-form{
+    width: 825px;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 label {
@@ -193,4 +230,17 @@ label {
     margin-top: 50px;
     justify-content: center;
 }
-
+/*
+-----style post
+ */
+.posts-container-chagai{
+    width: 870px;
+    height: 180px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px 1px rgba(34, 60, 80, 0.3);
+    margin-top: 20px;
+}
+.post-chagai{
+    padding-top: 5px;
+    margin-left: 20px;
+}

@@ -15,7 +15,6 @@ $db = new BlogDB();
 
 if ($_POST) {
     $user = $db->fetchUser("`users`", ["username = '" .$_POST['username'] ."'", "password = '" .md5($_POST['password']) ."'"]);
-    var_dump($user);
 
     if (!empty($user)) {
         $_SESSION['user_id'] = $user["id"];
@@ -24,5 +23,5 @@ if ($_POST) {
         // перенаправляем на страницу index.php
         header('Location: index.php');
     }
-    else header('Location: loginPage.php');
+    else header('Location: LoginPage.php');
 }

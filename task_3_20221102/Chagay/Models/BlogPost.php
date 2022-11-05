@@ -9,7 +9,7 @@ class BlogPost
     public $date;
     public $creator;
 
-    public BlogDB $db;
+    public $db;
 
     /**
      * @param $title
