@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-html, button, input {
+html, button, input, textarea {
     font-family: Quicksand;
 }
 
@@ -10,6 +10,9 @@ button {
 
 body {
     width: 1040px;
+
+    display: flex;
+    flex-direction: column;
 
     margin: 0 auto;
 }
@@ -28,15 +31,27 @@ h1 {
     font-size:38px;
 }
 
+textarea {
+    height: 100px !important;
+}
+
 /*
 --------------index
- */
+*/
 
 .header-heading {
     margin: 0;
 
     font-size: 32px;
     font-weight: bold;
+}
+
+.header-btns {
+    width: 250px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .styled-btn {
@@ -56,6 +71,10 @@ h1 {
     font-size: 18px;
 
     transition: .3s;
+}
+
+.logout {
+    width: 55px;
 }
 
 .add-post {
@@ -134,14 +153,47 @@ h1 {
     align-items: end;
 }
 
+.add-post-form {
+    box-sizing: border-box;
+
+    width: 350px;
+    margin-top: 25px;
+
+    position: absolute;
+
+    z-index: -1;
+    opacity: 0;
+    transition: .3s;
+}
+
+.add-post-btn {
+    width: 55px;
+}
+
+.edit-profile-form {
+    margin-top: 100px;
+    align-self: end;
+}
+
 /*
 --------------login
- */
+*/
 
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(68, 68, 68, 0.68);
+    
+    margin-top: 20px;
 }
 
 form {
@@ -153,8 +205,13 @@ form {
     margin-top: 50px;
 }
 
+.login-form input {
+    width: 268px;
+    height: 45px;
+}
+
 label {
-    width: 80px;
+    width: 268px;
     margin-bottom: 25px;
 
     display: block;
@@ -165,7 +222,7 @@ label {
     color: #444444;
 }
 
-input {
+input, textarea {
     width: 250px;
     height: 25px;
 
@@ -184,7 +241,7 @@ input {
     transition: .3s;
 }
 
-input:focus {
+input:focus, textarea:focus {
     background: #e3e3e3;
 
     border-radius: 16px;
@@ -195,15 +252,9 @@ button[type=submit] {
 }
 
 .login-heading {
-    display: flex;
-    align-items: center;
-
     margin-top: 50px;
 }
 
-.login-heading svg {
-    margin-right: 15px;
-}
 
 .login {
     width: 200px;
@@ -215,3 +266,49 @@ button[type=submit] {
     align-self: center;
 }
 
+/*
+--------------registration
+*/
+
+.registration-form {
+    width: 600px;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.surename-box, .forename-box {
+    margin-top: 40px;
+}
+
+/*
+--------------animations
+*/
+
+.show {
+    position: absolute;
+    z-index: 1;
+    padding: 25px 40px 55px 40px;
+
+    font-weight: 700;
+
+    opacity: 1 !important;
+    background: white;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+}
+
+.active-background {
+    background: rgba(5, 196, 107, 0.47) !important;
+
+    border-radius: 12px;
+}
+
+.ahref {
+    width: auto;
+    height: auto;
+}
