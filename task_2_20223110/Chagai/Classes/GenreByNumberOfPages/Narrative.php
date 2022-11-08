@@ -1,11 +1,11 @@
 <?php
 
-namespace PHPClasses\GenreByNumberOfPages;
+namespace GenreByNumberOfPages;
 
 class Narrative extends GenreByNumberOfPages
 {
     public function __construct()
     {
-        $this->genreTitle = "Narrative";
+        $this->genreTitle="Narrative";
     }
 }
