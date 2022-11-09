@@ -82,19 +82,20 @@ class PROFESSIONAL extends GenreByContent
 
 
 
-$book1 = new Book("Genry", [new Detective(), new Narrative()]);
+$book1 = new Book("Genry", [new Detective(), new Narrative()]); //Обьявляем книги
 $book2 = new Book("Spoter", [new PROFESSIONAL]);
 $book3 = new Book("Garryik", [new Fantastic(), new PROFESSIONAL(), new Story()]);
 
-$arrayOfBooks = [$book1, $book2, $book3];
+$arrayOfBooks = [$book1, $book2, $book3]; // Все наши книги
 
-$arrayGenrys = [GenreByContent::class, GenreByForm::class, GenreByNumberOfPages::class];
-$arrayGenry = [GenreByNumberOfPages::class];
+$arrayGenrys = [GenreByContent::class, GenreByForm::class, GenreByNumberOfPages::class]; // Все жанры
+$arrayGenry = [GenreByNumberOfPages::class]; // Нужный нам жанр для фильтра
 
-$filtered = BookService::filterBookByGenre($arrayOfBooks, Detective::class);
+$filtered = BookService::filterBookByGenre($arrayOfBooks, Detective::class); //Используем функцию фильтрации по жанру и ответ записываем в переменную
 
-foreach ($filtered as $book) {
+foreach ($filtered as $book) { // Циклом выводим отфильтрованные книги
     var_dump($book);
     echo "<br>";
 }
-
+//BookService::filterBookByGenre(GenreByContent::class);
+//var_dump($book1 instanceof Book);
