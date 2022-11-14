@@ -9,7 +9,7 @@ class Detective extends GenreByContent
     /**
      * @var array
      */
-    private $arr_genre;
+   
 
     public function __construct(){
         $genre = "detective";
